@@ -177,6 +177,21 @@ class Character extends FlxSprite
 				}
 
 				playAnim('idle');
+				
+			case 'kapi':
+				tex = Paths.getSparrowAtlas('DADDY_DEAREST');
+				frames = tex;
+				animation.addByIndices('idle', 'Dad idle dance', [2, 4, 6, 8, 10, 0], "", 12, false);
+				animation.addByPrefix('singUP', 'Dad Sing Note UP', 24, false);
+				animation.addByPrefix('singRIGHT', 'Dad Sing Note RIGHT', 24, false);
+				animation.addByPrefix('singDOWN', 'Dad Sing Note DOWN', 24, false);
+				animation.addByPrefix('singLEFT', 'Dad Sing Note LEFT', 24, false);
+				animation.addByPrefix('meow', 'Dad meow', 24, false);
+				animation.addByPrefix('stare', 'Dad stare', 24, false);
+
+				loadOffsetFile(curCharacter);
+
+				playAnim('idle');
 
 			case 'scooby':
 				tex = Paths.getSparrowAtlas('scooby');
@@ -578,6 +593,26 @@ class Character extends FlxSprite
 				antialiasing = false;
 			case 'senpai-angry':
 				frames = Paths.getSparrowAtlas('weeb/senpai');
+				animation.addByPrefix('idle', 'Angry Senpai Idle', 24, false);
+				animation.addByPrefix('singUP', 'Angry Senpai UP NOTE', 24, false);
+				animation.addByPrefix('singLEFT', 'Angry Senpai LEFT NOTE', 24, false);
+				animation.addByPrefix('singRIGHT', 'Angry Senpai RIGHT NOTE', 24, false);
+				animation.addByPrefix('singDOWN', 'Angry Senpai DOWN NOTE', 24, false);
+
+				addOffset('idle');
+				addOffset("singUP", 5, 37);
+				addOffset("singRIGHT");
+				addOffset("singLEFT", 40);
+				addOffset("singDOWN", 14);
+				playAnim('idle');
+
+				setGraphicSize(Std.int(width * 6));
+				updateHitbox();
+
+				antialiasing = false;
+			
+			case 'wyatt':
+				frames = Paths.getSparrowAtlas('weeb/wyatt');
 				animation.addByPrefix('idle', 'Angry Senpai Idle', 24, false);
 				animation.addByPrefix('singUP', 'Angry Senpai UP NOTE', 24, false);
 				animation.addByPrefix('singLEFT', 'Angry Senpai LEFT NOTE', 24, false);
